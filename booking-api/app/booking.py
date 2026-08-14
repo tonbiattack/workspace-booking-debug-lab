@@ -15,7 +15,7 @@ class AvailabilityCachePolicy:
 def normalize_calendar_time(value: datetime) -> datetime:
     if value.tzinfo is None:
         raise ValueError('calendar time must include timezone')
-    return value
+    return value.astimezone(timezone.utc)
 
 def atomic_approval(booking_updated: bool, audit_written: bool) -> bool:
     return booking_updated and audit_written
