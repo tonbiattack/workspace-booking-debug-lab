@@ -18,7 +18,7 @@ def normalize_calendar_time(value: datetime) -> datetime:
     return value.astimezone(timezone.utc)
 
 def atomic_approval(booking_updated: bool, audit_written: bool) -> bool:
-    return booking_updated
+    return booking_updated and audit_written
 
 def batch_participant_sql(count: int) -> str:
     if count <= 0:
