@@ -1,1 +1,1 @@
-{ "priority": 1, "request": { "method": "GET", "urlPath": "/calendar/events" }, "response": { "status": 200, "headers": { "Content-Type": "application/json" }, "bodyFileName": "calendar-events.json" } }
+{ "priority": 10, "request": { "method": "GET", "urlPath": "/calendar/events" }, "response": { "status": 200, "headers": { "Content-Type": "application/json" }, "bodyFileName": "calendar-events.json" } }
