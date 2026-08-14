@@ -1,0 +1,14 @@
+openapi: 3.0.3
+info: { title: Workspace Booking Gateway, version: 0.1.0 }
+paths:
+  /api/availability:
+    get:
+      parameters:
+        - { in: query, name: roomId, required: true, schema: { type: string } }
+        - { in: query, name: from, required: true, schema: { type: string, format: date-time } }
+        - { in: query, name: to, required: true, schema: { type: string, format: date-time } }
+      responses: { '200': { description: Availability result } }
+  /api/bookings/{id}/approve:
+    post:
+      parameters: [ { in: path, name: id, required: true, schema: { type: string } } ]
+      responses: { '200': { description: Approved booking } }
