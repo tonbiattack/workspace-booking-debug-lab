@@ -10,7 +10,7 @@ class BookingSlot:
 
 class AvailabilityCachePolicy:
     def should_cache(self, slots: list[BookingSlot]) -> bool:
-        return True
+        return len(slots) > 0
 
 def normalize_calendar_time(value: datetime) -> datetime:
     if value.tzinfo is None:
