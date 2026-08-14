@@ -26,4 +26,6 @@ def batch_participant_sql(count: int) -> str:
     return 'select booking_id, count(*) from booking_participant where booking_id in (' + ', '.join(['?'] * count) + ') group by booking_id'
 
 def required_approver_name(value: str) -> str:
+    if not value.strip():
+        raise ValueError('approver name is required')
     return value
