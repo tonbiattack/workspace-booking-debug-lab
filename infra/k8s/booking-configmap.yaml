@@ -3,5 +3,5 @@ kind: ConfigMap
 metadata: { name: booking-api-config }
 data:
   DATABASE_HOST: postgres
-  REDIS_HOST: redis
+  REDIS_HOST: redis-booking
   EXTERNAL_CALENDAR_URL: http://wiremock:8080
