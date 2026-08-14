@@ -1,0 +1,14 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: { name: booking-api }
+spec:
+  selector: { matchLabels: { app: booking-api } }
+  template:
+    metadata: { labels: { app: booking-api } }
+    spec:
+      containers:
+        - name: booking-api
+          image: ghcr.io/tonbiattack/workspace-booking-debug-lab-api:latest
+          ports: [{ containerPort: 8000 }]
+          envFrom: [{ configMapRef: { name: booking-api-config } }]
+          readinessProbe: { httpGet: { path: /health, port: 8000 }, initialDelaySeconds: 5 }

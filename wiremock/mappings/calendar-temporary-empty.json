@@ -1,0 +1,1 @@
+{ "priority": 2, "request": { "method": "GET", "urlPath": "/calendar/events", "headers": { "X-Test-Scenario": { "equalTo": "empty" } } }, "response": { "status": 200, "headers": { "Content-Type": "application/json" }, "body": "[]" } }
