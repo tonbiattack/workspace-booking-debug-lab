@@ -23,7 +23,7 @@ def atomic_approval(booking_updated: bool, audit_written: bool) -> bool:
 def batch_participant_sql(count: int) -> str:
     if count <= 0:
         raise ValueError('count must be positive')
-    return 'select booking_id, count(*) from booking_participant where booking_id = ? group by booking_id'
+    return 'select booking_id, count(*) from booking_participant where booking_id in (' + ', '.join(['?'] * count) + ') group by booking_id'
 
 def required_approver_name(value: str) -> str:
     if not value.strip():
