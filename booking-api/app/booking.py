@@ -6,7 +6,6 @@ class BookingSlot:
     room_id: str
     starts_at: datetime
     ends_at: datetime
-    version: int = 0
 
 class AvailabilityCachePolicy:
     def should_cache(self, slots: list[BookingSlot]) -> bool:
